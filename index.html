@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GS9 – Unit 6 – Luyện tập tuần 23/10</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#1e2a3a;--muted:#5d6878;--brand:#3b5bfd;--brand-d:#2a41c9;--good:#1a8f4d;--bad:#d33a3f;--warn:#f5a524;--line:#d9e0ec;--chip:#eef2fb;--r:14px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Segoe UI',Roboto,Arial,sans-serif;font-size:18px;line-height:1.55;padding-bottom:70px}
+.wrap{max-width:780px;margin:0 auto;padding:14px 12px 30px}
+.hero{background:linear-gradient(135deg,#3b5bfd,#6d3fe0);color:#fff;border-radius:var(--r);padding:20px 18px;margin-bottom:14px}
+.hero h1{margin:0 0 4px;font-size:1.35rem;line-height:1.3}
+.hero p{margin:0;font-size:.95rem;opacity:.95}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.tip{background:#fff8e6;border:1px dashed var(--warn);border-radius:12px;padding:12px 14px;font-size:.95rem;margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:520px){.grid2{grid-template-columns:1fr}}
+label.f{display:block;font-size:.85rem;color:var(--muted);font-weight:600;margin-bottom:3px}
+input[type=text],textarea{width:100%;border:2px solid var(--line);border-radius:10px;padding:11px 12px;font-size:1rem;font-family:inherit;background:#fbfcfe}
+textarea{min-height:64px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-color:var(--brand)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--bg);padding:8px 0 6px}
+.bar{height:12px;border-radius:99px;background:#dde4f0;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,#3b5bfd,#6d3fe0);transition:width .25s}
+.plabel{font-size:.85rem;color:var(--muted);text-align:right;margin-top:3px}
+.strip{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:.78rem;background:var(--chip);border:1px solid var(--line);border-radius:99px;padding:3px 9px;color:var(--muted);white-space:nowrap}
+.chip.done{background:#e6f7ec;border-color:#9bd9b4;color:#116b39;font-weight:700}
+.lv{margin:22px 0 2px;font-size:1.15rem;font-weight:800;color:var(--brand-d);display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.lv .bd{font-size:.8rem;font-weight:700;border-radius:99px;padding:3px 10px;background:#eceff5;color:#8a93a3}
+.lv .bd.on{background:#fff2c4;color:#7a5200}
+.lvsub{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+.q{padding:14px 0;border-top:1px solid var(--line)}
+.q:first-child{border-top:0}
+.qp{font-weight:600;margin-bottom:9px}
+.qn{color:var(--brand);margin-right:4px}
+.opts{display:grid;grid-template-columns:1fr;gap:8px}
+.opt{border:2px solid var(--line);background:#fbfcfe;border-radius:10px;padding:11px 13px;cursor:pointer;user-select:none;font-size:1rem}
+.opt:hover{border-color:var(--brand)}
+.opt.sel{border-color:var(--brand);background:var(--chip);font-weight:700}
+.opt.ok{border-color:var(--good);background:#e8f8ef;font-weight:700}
+.opt.no{border-color:var(--bad);background:#fdeceb}
+.q.good{background:#f3fcf6;border-radius:10px}.q.bad{background:#fdf5f5;border-radius:10px}
+.note{margin-top:8px;font-size:.92rem;padding:8px 10px;border-radius:8px}
+.note.ok{background:#e8f8ef;color:#0d6b37}.note.no{background:#fdeceb;color:#9c1f24}
+.xp{display:inline-block;font-weight:700;margin-left:6px}
+.btn{display:block;width:100%;background:var(--brand);color:#fff;border:0;border-radius:12px;padding:15px;font-size:1.05rem;font-weight:800;cursor:pointer}
+.btn:hover{background:var(--brand-d)}
+.btn.sec{background:#fff;color:var(--brand);border:2px solid var(--brand);margin-top:10px}
+.btn.sm{display:inline-block;width:auto;padding:9px 16px;font-size:.95rem;margin-top:8px}
+.submit{position:sticky;bottom:0;padding:12px 0 6px;background:linear-gradient(180deg,rgba(244,247,251,0),var(--bg) 35%)}
+.hidden{display:none!important}
+.err{color:var(--bad);font-size:.9rem;margin-top:6px}
+.res{text-align:center}
+.score{font-size:3.2rem;font-weight:900;color:var(--brand)}
+.rank{font-size:1.2rem;font-weight:800;margin:4px 0}
+.badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:10px 0}
+.status{font-size:.85rem;color:var(--muted);margin-top:8px}
+.foot{text-align:center;color:var(--muted);font-size:.8rem;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero"><h1>GS9 – Unit 6 – Luyện tập tuần 23/10</h1><p>Unit 6: Vietnamese Lifestyle: Then and Now · 40 câu · 35 phút · Trọng tâm: Động từ + V-ing / to V: enjoy, avoid, mind, keep, practise + V-ing; want, decide, hope, plan + to V; like/love/start/begin + cả hai; remember/stop/try/forget + V-ing ↔ to V</p></div>
+<div class="tip"><b>Ghi nhớ nhanh:</b> + <b>V-ing</b>: <i>enjoy, avoid, mind, keep, practise</i> (She avoids eating fast food.)<br>+ <b>to V</b>: <i>want, decide, hope, plan</i> (Linh decided to study abroad.)<br>+ cả hai: <i>like, love, start, begin</i> (I love reading = I love to read.)<br>Đổi nghĩa: <i>remember/forget/stop + V-ing</i> = việc đã xảy ra / ngừng làm; <i>+ to V</i> = việc cần làm / dừng lại để làm. Ví dụ: I remember playing marbles. / Remember to lock the door.<br><small>🎮 Mỗi câu đúng +10 XP · 3 câu đúng liên tiếp → câu kế tiếp Combo x2 · Boss +20 XP/câu. XP chỉ để vui, điểm thật tính theo thang 10.</small></div>
+<div class="card">
+<div class="grid2">
+<div><label class="f">Trường</label><input type="text" id="school" placeholder="VD: THCS Nguyễn Văn Trỗi"></div>
+<div><label class="f">Lớp</label><input type="text" id="sclass" placeholder="VD: 9A1"></div>
+</div>
+<div style="margin-top:10px"><label class="f">Họ và tên *</label><input type="text" id="sname" placeholder="Nhập họ và tên của em"></div>
+<div class="err hidden" id="err"></div>
+</div>
+<div class="sticky">
+<div class="bar"><div class="fill" id="fill"></div></div>
+<div class="plabel" id="plabel">Đã trả lời 0/40 câu</div>
+<div class="strip" id="strip"></div>
+</div>
+<div id="body"></div>
+<div class="submit" id="submitbar"><button class="btn" onclick="submitTest()">Nộp bài &amp; xem kết quả</button></div>
+<div class="card res hidden" id="result">
+<div class="score" id="rscore"></div>
+<div class="rank" id="rrank"></div>
+<div id="rsub"></div>
+<div class="badges" id="rbadges"></div>
+<div class="status" id="status"></div>
+<button class="btn sec" id="retrybtn" onclick="startPractice()">🔁 Luyện lại câu sai (chỉ để luyện, không gửi điểm)</button>
+</div>
+<div class="card hidden" id="practice"></div>
+<div class="foot">Kết quả được gửi tự động cho cô sau khi em nộp bài. Chúc em học tốt!</div>
+</div>
+<script>
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycby08od-VjK63bcLdiXGBgjz9imiBImjbBBKmjHqN1AnzfpBhEjFyItSniMfbPKm9TA/exec";
+const CLASS_LABEL="GS9";
+const TEST_NAME="GS9 Unit 6 Vietnamese Lifestyle: Then and Now - Luyen tap tuan 23/10 (40 cau)";
+const UNIT="6";
+const PASSAGE="Tet in my grandparents' time was very different from Tet today. In the past, families spent weeks preparing for the holiday. They made banh chung together and decorated their houses with peach blossoms. Children wore new clothes only once a year, so they felt very excited. They enjoyed watching their parents cook and listening to old stories around the fire. Nowadays, many families prefer buying ready-made food and often travel during the holiday. Some young people even decide to stay at home and chat with friends online. However, most of them still hope to visit their grandparents and give them best wishes. Tet is changing, but love for family remains the same.";
+const LEVELS={"1":["Level 1 – Khởi động","⭐ Từ vựng","Nối từ/cụm từ với nghĩa hoặc định nghĩa."],"2":["Level 2 – Phát âm","🔊 Phát âm","Phần gạch chân và trọng âm."],"3":["Level 3 – Từ vựng & ngữ pháp","🧠 Ngữ pháp","Chọn đáp án đúng A, B, C hoặc D."],"4":["Level 4 – Biển báo / thông báo","🪧 Biển báo","Chọn câu đúng nghĩa với thông báo."],"5":["Level 5 – Word form","🔤 Word form","Viết dạng đúng của từ trong ngoặc."],"6":["Level 6 – Đồng nghĩa / trái nghĩa","🔁 Đồng-Trái nghĩa","Chọn từ đồng nghĩa hoặc trái nghĩa với từ gạch chân."],"7":["Level 7 – Tìm lỗi sai","🔍 Tìm lỗi","Chọn phần (A, B, C, D) có lỗi sai."],"8":["Level 8 – Viết lại câu","✍️ Viết lại câu","Viết lại câu sao cho nghĩa không đổi, bắt đầu bằng phần gợi ý."],"9":["BOSS LEVEL – Đọc hiểu","👑 Boss","Đọc đoạn văn và trả lời. Điểm thưởng +20 XP mỗi câu!"]};
+const Q=[{"lv": 1, "t": "mcq", "p": "Chọn nghĩa tiếng Việt đúng của: <b>firecracker</b>", "o": ["đèn lồng", "con diều", "pháo nổ", "viên bi"], "a": 2, "e": "“firecracker” nghĩa là “pháo nổ”.", "id": "u6_01"}, {"lv": 1, "t": "mcq", "p": "Chọn nghĩa tiếng Việt đúng của: <b>hide-and-seek</b>", "o": ["trò kéo co", "trò trốn tìm", "trò nhảy dây", "trò đua xe"], "a": 1, "e": "“hide-and-seek” là trò trốn tìm.", "id": "u6_02"}, {"lv": 1, "t": "mcq", "p": "Chọn từ đúng với định nghĩa: “a small coloured glass ball used in a children's game”", "o": ["kite", "uniform", "tug of war", "marble"], "a": 3, "e": "Định nghĩa này mô tả “marble” (viên bi).", "id": "u6_03"}, {"lv": 1, "t": "mcq", "p": "Chọn từ/cụm từ đúng với định nghĩa: “a group of people with a different culture and language from most people in a country”", "o": ["ethnic minority", "extended family", "nuclear family", "generation gap"], "a": 0, "e": "Định nghĩa mô tả “ethnic minority” (dân tộc thiểu số).", "id": "u6_04"}, {"lv": 1, "t": "mcq", "p": "Chọn nghĩa tiếng Việt đúng của: <b>learning facilities</b>", "o": ["phong cách học tập", "cơ sở vật chất phục vụ học tập", "nguồn thông tin trực tuyến", "bài thuyết trình"], "a": 1, "e": "“learning facilities” là cơ sở vật chất phục vụ học tập.", "id": "u6_05"}, {"lv": 2, "t": "mcq", "p": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.<br>A. determin<u>ed</u> B. memoris<u>ed</u> C. influenc<u>ed</u> D. dy<u>ed</u>", "o": ["determined", "memorised", "influenced", "dyed"], "a": 2, "e": "“influenced” đọc đuôi -ed là /t/ (sau âm vô thanh /s/); các từ còn lại đọc /d/.", "id": "u6_06"}, {"lv": 2, "t": "mcq", "p": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.<br>A. suggest<u>ed</u> B. pursu<u>ed</u> C. appreciat<u>ed</u> D. reflect<u>ed</u>", "o": ["suggested", "pursued", "appreciated", "reflected"], "a": 1, "e": "“pursued” đọc đuôi -ed là /d/; các từ còn lại đọc /ɪd/ (sau âm /t/).", "id": "u6_07"}, {"lv": 2, "t": "mcq", "p": "Chọn từ có trọng âm chính khác với các từ còn lại.<br>A. privacy B. leisure C. freedom D. opportunity", "o": ["privacy", "leisure", "freedom", "opportunity"], "a": 3, "e": "“opportunity” nhấn âm 3; các từ còn lại nhấn âm 1.", "id": "u6_08"}, {"lv": 2, "t": "mcq", "p": "Chọn từ có trọng âm chính khác với các từ còn lại.<br>A. exhibition B. profession C. appreciate D. experiment", "o": ["exhibition", "profession", "appreciate", "experiment"], "a": 0, "e": "“exhibition” nhấn âm 3; các từ còn lại nhấn âm 2.", "id": "u6_09"}, {"lv": 3, "t": "mcq", "p": "My brother avoids ______ his personal information on social media.", "o": ["to share", "share", "sharing", "shared"], "a": 2, "e": "avoid + V-ing.", "id": "u6_10"}, {"lv": 3, "t": "mcq", "p": "Linh hopes ______ a doctor in the future.", "o": ["becoming", "to become", "become", "becomes"], "a": 1, "e": "hope + to V.", "id": "u6_11"}, {"lv": 3, "t": "mcq", "p": "Would you mind ______ the volume down a little?", "o": ["to turn", "turn", "turned", "turning"], "a": 3, "e": "mind + V-ing.", "id": "u6_12"}, {"lv": 3, "t": "mcq", "p": "We plan ______ a tug of war contest at school next week.", "o": ["to organise", "organising", "organise", "organised"], "a": 0, "e": "plan + to V.", "id": "u6_13"}, {"lv": 3, "t": "mcq", "p": "I stopped ______ marbles when I was twelve because I preferred football.", "o": ["to play", "play", "played", "playing"], "a": 3, "e": "stop + V-ing = ngừng làm việc đó.", "id": "u6_14"}, {"lv": 3, "t": "mcq", "p": "Remember ______ your grandparents this weekend; they miss you a lot.", "o": ["to visit", "visiting", "visit", "visited"], "a": 0, "e": "remember + to V = nhớ phải làm (việc chưa làm).", "id": "u6_15"}, {"lv": 3, "t": "mcq", "p": "Many children love ______ kites in the afternoon.", "o": ["fly", "flew", "flying", "to flying"], "a": 2, "e": "love + V-ing (hoặc to V); chỉ “flying” đúng trong các đáp án.", "id": "u6_16"}, {"lv": 3, "t": "mcq", "p": "In the past, farmers used ______ to plough the fields.", "o": ["kites", "buffaloes", "marbles", "firecrackers"], "a": 1, "e": "buffalo = con trâu, dùng để cày ruộng.", "id": "u6_17"}, {"lv": 3, "t": "mcq", "p": "Many ethnic minority people still wear ______ costumes at festivals.", "o": ["hi-tech", "democratic", "electronic", "traditional"], "a": 3, "e": "traditional costume = trang phục truyền thống.", "id": "u6_18"}, {"lv": 3, "t": "mcq", "p": "The quality of life in a city depends ______ many factors.", "o": ["on", "in", "at", "for"], "a": 0, "e": "depend on = phụ thuộc vào.", "id": "u6_19"}, {"lv": 4, "t": "mcq", "p": "Đọc biển báo/thông báo và chọn câu đúng nghĩa.<br><i>NOTICE: Visitors are asked to avoid touching the exhibits. Photos without flash are welcome.</i>", "o": ["Visitors may touch the exhibits if they use flash.", "Visitors should not touch the exhibits, but they can take photos without flash.", "Visitors cannot take any photos here.", "Visitors must touch the exhibits carefully."], "a": 1, "e": "avoid touching = không chạm; ảnh không dùng đèn flash thì được.", "id": "u6_20"}, {"lv": 4, "t": "mcq", "p": "Đọc biển báo/thông báo và chọn câu đúng nghĩa.<br><i>NOTICE: Students who want to join the Folk Music Club must give the form to Ms Hoa before Friday.</i>", "o": ["Students must give the form to Ms Hoa after Friday.", "Only Ms Hoa can join the club.", "The club is closed on Friday.", "Students who want to join the club must hand in the form before Friday."], "a": 3, "e": "Học sinh muốn tham gia phải nộp đơn cho cô Hoa trước thứ Sáu.", "id": "u6_21"}, {"lv": 5, "t": "fill", "p": "Teenagers should learn to take ______ (RESPONSIBLE) for their own choices.", "acc": ["responsibility"], "ans": "responsibility", "e": "Sau “take” cần danh từ: responsibility.", "id": "u6_22"}, {"lv": 5, "t": "fill", "p": "It is ______ (FAIR) to stop girls from going to school.", "acc": ["unfair"], "ans": "unfair", "e": "Cần tính từ phủ định: unfair.", "id": "u6_23"}, {"lv": 5, "t": "fill", "p": "The Internet has made learning more ______ (ENJOY) for students.", "acc": ["enjoyable"], "ans": "enjoyable", "e": "Sau “more” cần tính từ: enjoyable.", "id": "u6_24"}, {"lv": 5, "t": "fill", "p": "Modern machines help farmers ______ (SHORT) the time they spend in the fields.", "acc": ["shorten"], "ans": "shorten", "e": "Sau “help farmers” cần động từ nguyên mẫu: shorten.", "id": "u6_25"}, {"lv": 5, "t": "fill", "p": "Young people today can communicate ______ (EASY) with friends all over the world.", "acc": ["easily"], "ans": "easily", "e": "Bổ nghĩa cho động từ cần trạng từ: easily.", "id": "u6_26"}, {"lv": 6, "t": "mcq", "p": "Chọn từ/cụm từ GẦN NGHĨA nhất với từ gạch chân.<br>Online sources can <u>influence</u> the way we learn.", "o": ["affect", "stop", "copy", "remember"], "a": 0, "e": "influence ≈ affect (ảnh hưởng).", "id": "u6_27"}, {"lv": 6, "t": "mcq", "p": "Chọn từ/cụm từ GẦN NGHĨA nhất với từ gạch chân.<br>My parents <u>suggested</u> that I join the folk music club.", "o": ["refused", "ordered", "recommended", "expected"], "a": 2, "e": "suggest ≈ recommend (gợi ý, đề nghị).", "id": "u6_28"}, {"lv": 6, "t": "mcq", "p": "Chọn từ/cụm từ TRÁI NGHĨA với từ gạch chân.<br>The two generations often have <u>conflicts</u> about money.", "o": ["agreements", "arguments", "problems", "fights"], "a": 0, "e": "conflict (xung đột) trái nghĩa với agreement (sự đồng thuận).", "id": "u6_29"}, {"lv": 6, "t": "mcq", "p": "Chọn từ/cụm từ TRÁI NGHĨA với từ gạch chân.<br>Many teenagers today are very <u>independent</u>.", "o": ["modern", "free", "dependent", "strong"], "a": 2, "e": "independent trái nghĩa với dependent (phụ thuộc).", "id": "u6_30"}, {"lv": 7, "t": "mcq", "p": "Tìm phần có lỗi sai (A, B, C hoặc D).<br>She <u>(A) avoids</u> <u>(B) to eat</u> fast food <u>(C) because</u> <u>(D) it is unhealthy</u>.", "o": ["A", "B", "C", "D"], "a": 1, "e": "avoid + V-ing: avoids eating.", "id": "u6_31"}, {"lv": 7, "t": "mcq", "p": "Tìm phần có lỗi sai (A, B, C hoặc D).<br>We <u>(A) decided</u> to move to the city, but my grandparents <u>(B) still</u> <u>(C) keep to live</u> <u>(D) in the village</u>.", "o": ["A", "B", "C", "D"], "a": 2, "e": "keep + V-ing: keep living.", "id": "u6_32"}, {"lv": 7, "t": "mcq", "p": "Tìm phần có lỗi sai (A, B, C hoặc D).<br>She <u>(A) wants</u> to be a teacher, but her parents <u>(B) would</u> <u>(C) like</u> her <u>(D) studying</u> medicine.", "o": ["A", "B", "C", "D"], "a": 3, "e": "would like sb + to V: would like her to study.", "id": "u6_33"}, {"lv": 8, "t": "rewrite", "p": "I did not post the letter because I forgot about it.<br>→ I forgot ...", "acc": ["i forgot to post the letter"], "ans": "i forgot to post the letter", "e": "forget + to V = quên không làm việc cần làm.", "id": "u6_34"}, {"lv": 8, "t": "rewrite", "p": "Hoa likes to read comics in her free time.<br>→ Hoa likes ...", "acc": ["hoa likes reading comics in her free time"], "ans": "hoa likes reading comics in her free time", "e": "like + V-ing (nghĩa không đổi).", "id": "u6_35"}, {"lv": 8, "t": "rewrite", "p": "Nam used to play marbles every day, but he doesn't any more.<br>→ Nam stopped ...", "acc": ["nam stopped playing marbles"], "ans": "nam stopped playing marbles", "e": "stop + V-ing = ngừng làm việc gì.", "id": "u6_36"}, {"lv": 8, "t": "rewrite", "p": "Linh said, “I will study abroad next year.”<br>→ Linh decided ...", "acc": ["linh decided to study abroad next year"], "ans": "linh decided to study abroad next year", "e": "decide + to V.", "id": "u6_37"}, {"lv": 8, "t": "rewrite", "p": "Please do not use your phone during the lesson.<br>→ Please avoid ...", "acc": ["please avoid using your phone during the lesson", "please avoid using your phone during the lessons"], "ans": "please avoid using your phone during the lesson", "e": "avoid + V-ing.", "id": "u6_38"}, {"lv": 9, "t": "mcq", "p": "What did children enjoy doing at Tet in the past?", "o": ["Travelling abroad.", "Chatting online with friends.", "Watching their parents cook and listening to old stories.", "Buying ready-made food."], "a": 2, "e": "Bài đọc: “They enjoyed watching their parents cook and listening to old stories”.", "id": "u6_39"}, {"lv": 9, "t": "mcq", "p": "What do most young people still hope to do at Tet?", "o": ["Visit their grandparents and give best wishes.", "Stay at home all day.", "Make banh chung for a week.", "Travel abroad."], "a": 0, "e": "Bài đọc: “most of them still hope to visit their grandparents and give them best wishes”.", "id": "u6_40"}];
+const state={};
+let submitted=false, results={};
+function norm(s){return (s||"").toString().trim().toLowerCase().normalize('NFC').replace(/[.,!?;:'"“”‘’]/g,'').replace(/\s+/g,' ').trim();}
+function ok(q){
+  const v=state[q.id];
+  if(q.t==='mcq')return v===q.a;
+  const g=norm(v); if(!g)return false;
+  return q.acc.map(norm).includes(g);
+}
+function correctText(q){return q.t==='mcq'?q.o[q.a]:q.ans;}
+function lvQs(l){return Q.filter(q=>String(q.lv)===String(l));}
+function optsHtml(q,mode){return q.o.map((o,i)=>`<div class="opt" data-q="${q.id}" data-i="${i}" onclick="pick('${q.id}',${i},'${mode}')">${o}</div>`).join('');}
+function qHtml(q,idx,mode){
+  let h=`<div class="q" id="${mode}-${q.id}"><div class="qp"><span class="qn">Câu ${idx}.</span>${q.p}</div>`;
+  if(q.t==='mcq')h+=`<div class="opts">${optsHtml(q,mode)}</div>`;
+  else if(q.t==='fill')h+=`<input type="text" id="in-${mode}-${q.id}" autocomplete="off" autocapitalize="off" placeholder="Nhập đáp án..." oninput="typed('${q.id}',this.value,'${mode}')">`;
+  else h+=`<textarea id="in-${mode}-${q.id}" placeholder="Viết lại câu..." oninput="typed('${q.id}',this.value,'${mode}')"></textarea>`;
+  if(mode==='p'&&q.t!=='mcq')h+=`<button class="btn sm" onclick="checkP('${q.id}')">Kiểm tra</button>`;
+  h+=`<div class="note hidden" id="note-${mode}-${q.id}"></div></div>`;
+  return h;
+}
+function build(){
+  let h='',n=0;
+  Object.keys(LEVELS).forEach(l=>{
+    const qs=lvQs(l); if(!qs.length)return;
+    const m=LEVELS[l];
+    h+=`<div class="lv"><span>${m[0]}</span><span class="bd" id="bd-${l}">${m[1]}</span></div><div class="lvsub">${m[2]}</div>`;
+    if(l==='9')h+=`<div class="card" style="background:#f7f9ff"><b>📖 Đọc đoạn văn:</b><p style="margin:8px 0 0">${PASSAGE}</p></div>`;
+    h+=`<div class="card">`;
+    qs.forEach((q,i)=>{n++;h+=qHtml(q,i+1,'m');});
+    h+=`</div>`;
+  });
+  document.getElementById('body').innerHTML=h; progress();
+}
+function pick(id,i,mode){
+  const q=Q.find(x=>x.id===id);
+  if(mode==='m'){ if(submitted)return; state[id]=i;
+    document.querySelectorAll(`.opt[data-q="${id}"]`).forEach(e=>{ if(e.closest('#practice'))return; e.classList.toggle('sel',+e.dataset.i===i);}); progress();}
+  else{ const box=document.getElementById('p-'+id); const good=(i===q.a);
+    box.querySelectorAll('.opt').forEach(e=>{const k=+e.dataset.i; if(k===q.a)e.classList.add('ok'); else if(k===i)e.classList.add('no');});
+    const nt=document.getElementById('note-p-'+id); nt.classList.remove('hidden','ok','no');
+    nt.classList.add(good?'ok':'no'); nt.innerHTML=good?'✅ Đúng rồi!':`❌ Chưa đúng. Đáp án: <b>${q.o[q.a]}</b><br>${q.e}`;}
+}
+const pst={};
+function typed(id,v,mode){ if(mode==='m'){state[id]=v;progress();} else pst[id]=v;}
+function checkP(id){const q=Q.find(x=>x.id===id);const g=norm(pst[id]);const good=!!g&&q.acc.map(norm).includes(g);
+  const nt=document.getElementById('note-p-'+id); nt.classList.remove('hidden','ok','no'); nt.classList.add(good?'ok':'no');
+  nt.innerHTML=good?'✅ Đúng rồi!':`❌ Chưa đúng. Đáp án: <b>${q.ans}</b><br>${q.e}`;}
+function answered(q){const v=state[q.id];return v!==undefined&&v!==null&&String(v).trim()!=='';}
+function progress(){
+  const a=Q.filter(answered).length, t=Q.length, p=Math.round(a/t*100);
+  document.getElementById('fill').style.width=p+'%';
+  document.getElementById('plabel').textContent=`Đã trả lời ${a}/${t} câu (${p}%)`;
+  let s='';
+  Object.keys(LEVELS).forEach(l=>{const qs=lvQs(l);const d=qs.filter(answered).length;const full=d===qs.length;
+    s+=`<span class="chip ${full?'done':''}">${full?LEVELS[l][1].split(' ')[0]:'L'+(l==='9'?'B':l)} ${d}/${qs.length}</span>`;
+    const bd=document.getElementById('bd-'+l); if(bd)bd.classList.toggle('on',full);});
+  document.getElementById('strip').innerHTML=s;
+}
+function submitTest(){
+  const name=document.getElementById('sname').value.trim(), err=document.getElementById('err');
+  if(!name){err.textContent='Em vui lòng nhập Họ và tên trước khi nộp bài nhé.';err.classList.remove('hidden');document.getElementById('sname').focus();return;}
+  err.classList.add('hidden'); submitted=true;
+  let correct=0,xp=0,streak=0,comboHits=0;
+  Q.forEach((q,i)=>{
+    const good=ok(q), base=q.lv===9?20:10; let gain=0,combo=false;
+    if(good){correct++; if(streak>=3){gain=base*2;combo=true;comboHits++;streak=0;} else {gain=base;streak++;}}
+    else streak=0;
+    xp+=gain; results[q.id]={good,gain,combo};
+    const box=document.getElementById('m-'+q.id), nt=document.getElementById('note-m-'+q.id);
+    box.classList.add(good?'good':'bad');
+    if(q.t==='mcq')box.querySelectorAll('.opt').forEach(e=>{const k=+e.dataset.i;if(k===q.a)e.classList.add('ok');else if(k===state[q.id])e.classList.add('no');});
+    nt.classList.remove('hidden','ok','no'); nt.classList.add(good?'ok':'no');
+    nt.innerHTML=good?`✅ Chính xác! <span class="xp">+${gain} XP${combo?' (Combo x2 🔥)':''}</span>`:`❌ Chưa đúng. Đáp án đúng: <b>${correctText(q)}</b><br>💡 ${q.e}`;
+  });
+  const total=Q.length, score=Math.round(correct/total*100)/10, score10=score.toFixed(1), pct=correct/total*100;
+  const rank=pct>=90?`🏆 Sẵn sàng thi vào 10 – Unit ${UNIT}`:pct>=70?'⚔️ Chiến binh':'💪 Cố lên – làm lại để lên hạng';
+  document.getElementById('rscore').textContent=score10+'/10';
+  document.getElementById('rrank').textContent=rank;
+  document.getElementById('rsub').innerHTML=`Đúng ${correct}/${total} câu · ⚡ ${xp} XP${comboHits?` · 🔥 ${comboHits} lần Combo x2`:''}`;
+  let b='';
+  Object.keys(LEVELS).forEach(l=>{const qs=lvQs(l);const g=qs.filter(q=>results[q.id].good).length;
+    b+=`<span class="chip ${g===qs.length?'done':''}">${LEVELS[l][1]} ${g}/${qs.length}</span>`;});
+  document.getElementById('rbadges').innerHTML=b;
+  document.getElementById('result').classList.remove('hidden');
+  document.getElementById('submitbar').classList.add('hidden');
+  if(Q.every(q=>results[q.id].good))document.getElementById('retrybtn').classList.add('hidden');
+  document.getElementById('result').scrollIntoView({behavior:'smooth',block:'start'});
+  const st=document.getElementById('status'); st.textContent='Đang gửi kết quả...';
+  const payload={className:CLASS_LABEL,testName:TEST_NAME,school:document.getElementById('school').value.trim(),studentClass:document.getElementById('sclass').value.trim(),name:name,correct:correct,total:total,score:score,score10:score10,timestamp:new Date().toISOString()};
+  fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
+   .then(()=>{st.textContent='Đã gửi kết quả về hệ thống.';}).catch(()=>{st.textContent='Gửi thất bại – em hãy chụp màn hình điểm và báo cô.';});
+}
+function startPractice(){
+  const wrong=Q.filter(q=>!results[q.id].good); const p=document.getElementById('practice');
+  let h=`<h3 style="margin-top:0">🔁 Luyện lại câu sai (${wrong.length} câu) – chỉ để luyện, không gửi điểm</h3>`;
+  wrong.forEach((q,i)=>{h+=qHtml(q,i+1,'p');});
+  p.innerHTML=h; p.classList.remove('hidden'); p.scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.addEventListener('DOMContentLoaded',build);
+</script>
+</body>
+</html>
